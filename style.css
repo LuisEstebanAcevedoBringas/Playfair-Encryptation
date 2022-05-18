@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Roboto+Mono:wght@200&display=swap');
+
+*, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.MainWindow{
+    width: 100vw;
+    height: 100vh;
+    background-color: #BCF4DE;
+}
+
+.MainBox{
+    flex-direction: row;
+}
+
+.Cifrado, .Decifrado{
+    /*border: 3px solid red;*/
+    margin: 30px;
+    padding: 30px;
+}
+
+.Title{
+    position: fixed;
+    top: 0;
+    font-size: 30px;
+    margin-top: 50px;
+    border-bottom: 3px solid black;
+}
+
+.SubTitle{
+    font-size: 30px;
+    border-bottom: 3px solid black;
+}
+
+h3{
+    margin: 25px;
+}
+
+input{
+    width: 500px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+input:focus{
+    border: none;
+    transition: 1s;
+}
+
+.button{
+    font-size: 15px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    background: #000000;
+    color: #FFFFFF;
+    transition: 0.5s;
+}
+
+.button:hover{
+    background: #FFFFFF;
+    color: #000000;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+/*Social icons*/
+.social_icons{
+    flex-direction: row ;
+}
+
+.social_icons a{
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 50%;
+    margin: 0 30px;
+    box-shadow: 0 0 20px 10px rgba(0, 0,0 , 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.social_icons a .fab{
+    font-size: 30px;
+    line-height: 80px;
+    position: relative;
+    z-index: 10;
+    transition: color 0.5s;
+}
+
+.social_icons a::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: -90px;
+    left: 0;
+    background: linear-gradient(-45deg, #ED1C94,#FFEC17);
+    position: absolute;
+    transition: 0.5s;
+}
+
+.social_icons a:hover::after{
+    top: 0;
+}
+
+.social_icons a:hover .fab{
+    color: #FFFFFF;
+}
+
+.social_icons a:hover{
+    transform: translateY(-10px);
+}
+
+.Footer{
+    width: 100%;
+    font-size: 25px;
+    background: #000000;
+    color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    padding: 15px;
+}
