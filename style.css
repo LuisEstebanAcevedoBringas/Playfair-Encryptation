@@ -111,7 +111,7 @@ input:focus{
     height: 100%;
     top: -90px;
     left: 0;
-    background: linear-gradient(-45deg, #ED1C94,#FFEC17);
+    background: #000000;
     position: absolute;
     transition: 0.5s;
 }
