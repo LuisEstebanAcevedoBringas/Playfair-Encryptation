@@ -13,15 +13,17 @@ def GenerarMatriz(palabra):
     len_Palabra = len(palabra_Procesada)
     palabra_Procesada.reverse()
 
-    #Agregar los elementos de la palabra al alfabeto
+    #Eliminamos las letras de la palabra que esten en la matriz
     for i in range (len_Palabra):
         if palabra_Procesada[i] in MatrizFinal:
             MatrizFinal.remove(palabra_Procesada[i])
     
+    #Agregar los elementos de la palabra al alfabeto
     for j in range (len_Palabra):
         MatrizFinal.insert(0,palabra_Procesada[j])
         j += 1
 
+    #Convertimos la lista un array de numpy y le damos forma de matriz (5x5)
     MatrizFinal = np.array(MatrizFinal)
     MatrizFinal = MatrizFinal.reshape(5,5)
 
