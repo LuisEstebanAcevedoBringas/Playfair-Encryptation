@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
     <title>Cifrado Playfair</title>
 </head>
 <body>
@@ -15,19 +15,22 @@
         <div class="MainBox Flex">
 
             <!-- Caja para el cifrado del mensaje -->
-            <div class="Cifrado Flex">
+            <form class="Cifrado Flex" action="cifrar" method="post">
                 <h2 class="SubTitle"> Cifrado </h2>
                 <h3>Ingrese el mensaje a cifrar: </h3>
                 <input type="text" name="Mensaje_Cifrar" id="">
                 <h3>Ingrese la palabra clave: </h3>
                 <input type="text" name="Palabra_Cifrar" id="">
-                <button class="button">Cifrar</button>
+                <button type="submit" class="button" value="Cifrar" id="btn_Cifrar">Cifrar</button>
                 <h3>El mensaje cifrado es: </h3>
+                {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                {% endfor %}
                 <label for=""></label>
-            </div>
+            </form>
 
             <!-- Caja para el decifrado del mensaje -->
-            <div class="Decifrado Flex">
+            <form class="Decifrado Flex" action="decifrar" method="post">
                 <h2 class="SubTitle"> Decifrado</h2>
                 <h3>Ingrese el mensaje a decifrar: </h3>
                 <input type="text" name="Mensaje_Decifrar" id="">
@@ -35,8 +38,11 @@
                 <input type="text" name="Palabra_Decifrar" id="">
                 <button class="button">Decifrar</button>
                 <h3>El mensaje decifrado es: </h3>
+                {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                {% endfor %}
                 <label for=""></label>
-            </div>
+            </form>
         </div>
 
         <!-- Social icons -->

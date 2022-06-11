@@ -1,7 +1,10 @@
+from ProcesarMensaje import ProcesamientoMensaje
+from GenerarMatriz import GenerarMatriz
 import numpy as np
 
-def DecifradoPlayfair(Mensaje, Matriz):
-    MensajeCifrado = Mensaje
+def DecifradoPlayfair(mensaje, palabra):
+    Matriz = GenerarMatriz(palabra)
+    MensajeCifrado = ProcesamientoMensaje(mensaje)
     MensajaDecifrado = []
     ContadorFIlas = 0
     ContadorColumnas = 0

@@ -1,7 +1,10 @@
+from ProcesarMensaje import ProcesamientoMensaje
+from GenerarMatriz import GenerarMatriz
 import numpy as np
 
-def CifrarPlayfair(mensaje, Matriz):
-    MensajeProcesado = mensaje
+def CifrarPlayfair(mensaje, palabra):
+    Matriz = GenerarMatriz(palabra)
+    MensajeProcesado =  ProcesamientoMensaje(mensaje)
     MensajeCodificado = [] #Declaramos una lista vacia donde se almacenera el mensaje cifrado
     ContadorFIlas = 0
     ContadorColumnas = 0

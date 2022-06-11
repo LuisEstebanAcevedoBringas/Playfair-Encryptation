@@ -2,7 +2,6 @@ def ProcesamientoMensaje (mensaje):
     p = 0
     q = 1
     Mensaje = mensaje.replace(" ","").upper()
-    print(Mensaje)
 
     #Eliminamos las letras con acentos, cambiamos a "v" por "u" y pasamos todo a mayusculas
     Acentos = (
@@ -42,9 +41,3 @@ def ProcesamientoMensaje (mensaje):
         ListaMensaje.append("X")
 
     return ListaMensaje
-
-if __name__ == '__main__':
-    
-    Mensaje = input("Ingrese el mensaje: ")
-    M = ProcesamientoMensaje(Mensaje)
-    print(M)
