@@ -4,7 +4,7 @@ from CifradoPlayfair import CifrarPlayfair
 
 app = Flask(__name__)
 app.secret_key = "Password"
-@app.route("/playfair")
+@app.route("/")
 
 def index():
     flash(" ")

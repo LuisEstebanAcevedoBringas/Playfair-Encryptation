@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Playfair Encryptation</title>
+</head>
+<body>
+    <section class="MainWindow Flex">
+        <div class="Title">
+            <h1>Playfair Encryptation</h1>
+        </div>
+        <div class="MainBox Flex">
+
+            <!-- Caja para el cifrado del mensaje -->
+            <form class="Cifrado Flex" action="cifrar" method="post">
+                <h2 class="SubTitle">Encryptation </h2>
+                <h3>Enter the message to encrypt: </h3>
+                <input type="text" name="Mensaje_Cifrar" id="">
+                <h3>Enter the keyword: </h3>
+                <input type="text" name="Palabra_Cifrar" id="">
+                <button type="submit" class="button" value="Cifrar" id="btn_Cifrar">Encrypt</button>
+                <h3>The encrypted message is: </h3>
+                {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+                <label for=""></label>
+            </form>
+
+            <!-- Caja para el decifrado del mensaje -->
+            <form class="Decifrado Flex" action="decifrar" method="post">
+                <h2 class="SubTitle">Deciphering</h2>
+                <h3>Enter the message to be deciphered: </h3>
+                <input type="text" name="Mensaje_Decifrar" id="">
+                <h3>Enter the keyword: </h3>
+                <input type="text" name="Palabra_Decifrar" id="">
+                <button class="button">Decipher</button>
+                <h3>The deciphered message is: </h3>
+                {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+                <label for=""></label>
+            </form>
+        </div>
+
+        <!-- Social icons -->
+        <div class="social_icons Flex">
+            <a href="https://github.com/LuisEstebanAcevedoBringas" target="_blank"><i class="fab fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/luisestebanacevedobringas/" target="_blank"><i class="fab fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/bringas.el.pelon/" target="_blank"><i class="fab fa-brands fa-instagram"></i></a>
+            <a href="https://luisbringas.com/" target="_blank"><i class="fab fas fa-ghost"></i></a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="Footer Flex">
+            Luis Esteban Acevedo Bringas - 2022
+        </footer>
+    </section>
+    <script src="https://kit.fontawesome.com/7fb5c2cc44.js" crossorigin="anonymous"></script>
+</body>
+</html>
