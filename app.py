@@ -3,9 +3,7 @@ from DecifradoPlayfair import DecifradoPlayfair
 from CifradoPlayfair import CifrarPlayfair
 
 app = Flask(__name__)
-
 app.secret_key = "Password"
-
 @app.route("/playfair")
 
 def index():
