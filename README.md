@@ -1,5 +1,5 @@
 ## Try it 
-### [Playfair Encryptation](https://playfair-encryption.herokuapp.com/playfair)
+### [Playfair Encryptation](https://playfair-encryption.herokuapp.com)
 
 ## Requirements
 * python version: 3.9.5
