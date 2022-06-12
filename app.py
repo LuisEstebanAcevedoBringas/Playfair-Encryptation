@@ -4,11 +4,16 @@ from CifradoPlayfair import CifrarPlayfair
 
 app = Flask(__name__)
 app.secret_key = "Password"
-@app.route("/")
 
+@app.route("/")
 def index():
     flash(" ")
     return render_template("index.html")
+
+@app.route("/english")
+def index_en():
+    flash(" ")
+    return render_template("index_en.html")
 
 @app.route("/cifrar", methods = ["POST", "GET"])
 def cifrar():
