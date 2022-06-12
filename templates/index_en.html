@@ -18,12 +18,12 @@
         <div class="MainBox Flex">
 
             <!-- Caja para el cifrado del mensaje -->
-            <form class="Cifrado Flex" action="cifrar" method="post">
+            <form class="Cifrado Flex" action="Encryptation" method="post">
                 <h2 class="SubTitle">Encryptation </h2>
                 <h3>Enter the message to encrypt: </h3>
-                <input type="text" name="Mensaje_Cifrar" id="">
+                <input type="text" name="Encryptation_message" id="">
                 <h3>Enter the keyword: </h3>
-                <input type="text" name="Palabra_Cifrar" id="">
+                <input type="text" name="Encryptation_word" id="">
                 <button type="submit" class="button" value="Cifrar" id="btn_Cifrar">Encrypt</button>
                 <h3>The encrypted message is: </h3>
                 {% for message in get_flashed_messages() %}
@@ -33,12 +33,12 @@
             </form>
 
             <!-- Caja para el decifrado del mensaje -->
-            <form class="Decifrado Flex" action="decifrar" method="post">
+            <form class="Decifrado Flex" action="Deciphering" method="post">
                 <h2 class="SubTitle">Deciphering</h2>
                 <h3>Enter the message to be deciphered: </h3>
-                <input type="text" name="Mensaje_Decifrar" id="">
+                <input type="text" name="Deciphering_message" id="">
                 <h3>Enter the keyword: </h3>
-                <input type="text" name="Palabra_Decifrar" id="">
+                <input type="text" name="Deciphering_word" id="">
                 <button class="button">Decipher</button>
                 <h3>The deciphered message is: </h3>
                 {% for message in get_flashed_messages() %}
