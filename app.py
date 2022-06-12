@@ -30,3 +30,19 @@ def decifrar():
     MD = DecifradoPlayfair(Mensaje_D, Palabra_D)
     flash(MD)
     return render_template("index.html")
+
+@app.route("/Encryptation", methods = ["POST", "GET"])
+def cifrar():
+    Mensaje = request.form['Encryptation_message']
+    Palabra = request.form["Encryptation_word"]
+    MC = CifrarPlayfair(Mensaje, Palabra)
+    flash(MC)
+    return render_template("index_en.html")
+
+@app.route("/Deciphering", methods = ["POST", "GET"])
+def decifrar():
+    Mensaje_D = request.form['Deciphering_message']
+    Palabra_D = request.form["Deciphering_word"]
+    MD = DecifradoPlayfair(Mensaje_D, Palabra_D)
+    flash(MD)
+    return render_template("index_en.html")
