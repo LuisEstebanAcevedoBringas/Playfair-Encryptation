@@ -4,7 +4,7 @@ import numpy as np
 
 def CifrarPlayfair(mensaje, palabra):
     Palabra = ProcesamientoMensaje(palabra) #Preprocess the keywork
-    Matriz = GenerarMatriz(Palabra) #Generate the key matrix
+    Matriz = GenerarMatriz("".join(Palabra)) #Generate the key matrix
     MensajeProcesado =  ProcesamientoMensaje(mensaje) #Preprocess the message
     MensajeCodificado = [] #Declare an empty list where the encrypted message will be stored.
     ContadorFIlas = 0
@@ -94,3 +94,7 @@ def CifrarPlayfair(mensaje, palabra):
 
     MensajeFinal = "".join(MensajeCodificado) #Pass the list to a string
     return(MensajeFinal)
+
+if __name__ == "__main__":
+    x = CifrarPlayfair("SaludosALMurney","hola")
+    print(x)

@@ -28,3 +28,7 @@ def GenerarMatriz(palabra):
     MatrizFinal = MatrizFinal.reshape(5,5)
 
     return(MatrizFinal)
+
+if __name__ == "__main__":
+    x = GenerarMatriz("hola")
+    print(x)
