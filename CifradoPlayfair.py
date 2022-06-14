@@ -3,9 +3,10 @@ from GenerarMatriz import GenerarMatriz
 import numpy as np
 
 def CifrarPlayfair(mensaje, palabra):
-    Matriz = GenerarMatriz(palabra)
-    MensajeProcesado =  ProcesamientoMensaje(mensaje)
-    MensajeCodificado = [] #Declaramos una lista vacia donde se almacenera el mensaje cifrado
+    Palabra = ProcesamientoMensaje(palabra) #Preprocess the keywork
+    Matriz = GenerarMatriz(Palabra) #Generate the key matrix
+    MensajeProcesado =  ProcesamientoMensaje(mensaje) #Preprocess the message
+    MensajeCodificado = [] #Declare an empty list where the encrypted message will be stored.
     ContadorFIlas = 0
     ContadorColumnas = 0
     MismaFila = True
@@ -13,17 +14,17 @@ def CifrarPlayfair(mensaje, palabra):
     L1 = 0
     L2 = 1
 
-    longitud = len(MensajeProcesado) #Obtenemos la longitud del mensaje ya procesado
+    longitud = len(MensajeProcesado) #Obtain the length of the message already processed.
 
-    for k in MensajeProcesado: #Obtenemos la posicion de cada letra del mensaje en la matriz
-        Posicion1 = np.where(Matriz == MensajeProcesado[ L1 ]) #Obtenemos la posicion de la letra 1 en la matriz
-        Posicion2 = np.where(Matriz == MensajeProcesado[ L2 ]) #Obtenemos la posicion de la letra 2 en la matriz
-        PosicionFila_Letra1 = int(Posicion1[0][0]) #Obtenemos la fila en donde esta la letra 1 en la matriz
-        PosicionColumna_Letra1 = int(Posicion1[1][0]) #Obtenemos la columna en donde esta la letra 1 en la matriz
-        PosicionFila_Letra2 = int(Posicion2[0][0]) #Obtenemos la fila en donde esta la letra 2 en la matriz
-        PosicionColumna_Letra2 = int(Posicion2[1][0]) #Obtenemos la columna en donde esta la letra 2 en la matriz
+    for k in MensajeProcesado: #Obtain the position of each letter of the message in the matrix.
+        Posicion1 = np.where(Matriz == MensajeProcesado[ L1 ]) #Obtain the position of the letter 1 in the matrix
+        Posicion2 = np.where(Matriz == MensajeProcesado[ L2 ]) #Obtain the position of the letter 2 in the matrix
+        PosicionFila_Letra1 = int(Posicion1[0][0]) #Obtain the row where the letter 1 is in the matrix
+        PosicionColumna_Letra1 = int(Posicion1[1][0]) #Obtain the column where the letter 1 is in the matrix
+        PosicionFila_Letra2 = int(Posicion2[0][0]) #Obtain the row where the letter 2 is in the matrix
+        PosicionColumna_Letra2 = int(Posicion2[1][0]) #Obtain the column where the letter 2 is in the matrix
 
-        #Busca si el par de letras estan en la misma fila
+        #Find if the pair of letters are in the same row
         while ContadorFIlas <= 4: 
             if MensajeProcesado[ L1 ] in Matriz[ ContadorFIlas, ] and MensajeProcesado[ L2 ] in Matriz[ ContadorFIlas, ]:
                 PosicionColumna_Letra1 += 1
@@ -48,9 +49,9 @@ def CifrarPlayfair(mensaje, palabra):
             else:
                 MismaFila = False
             ContadorFIlas += 1
-        ContadorFIlas = 0 #Reiniciamos el contador
+        ContadorFIlas = 0 #Reset the counter
         
-        #Buscamos si el par de letras estan en la misma columna
+        #Find if the pair of letters are in the same column
         while ContadorColumnas <= 4:
             if MensajeProcesado[ L1 ] in Matriz[ :, ContadorColumnas ] and MensajeProcesado[ L2 ] in Matriz[ :, ContadorColumnas ]:
                 PosicionFila_Letra1 += 1
@@ -75,9 +76,9 @@ def CifrarPlayfair(mensaje, palabra):
             else:
                 MismaColumna = False
             ContadorColumnas += 1
-        ContadorColumnas = 0
+        ContadorColumnas = 0 #Reset the counter
 
-        #Buscamos las combinaciones de las letras que no estan en la misma fila o columna
+        #Look for combinations of letters that are not in the same row or column.
         if MismaFila == False and MismaColumna == False:
             NuevaColumna_Letra1 = PosicionColumna_Letra2
             NuevaColumna_Letra2 = PosicionColumna_Letra1
@@ -91,5 +92,5 @@ def CifrarPlayfair(mensaje, palabra):
         if   L2 > longitud: 
             break
 
-    MensajeFinal = "".join(MensajeCodificado) #Pasamos la lista a un string
+    MensajeFinal = "".join(MensajeCodificado) #Pass the list to a string
     return(MensajeFinal)

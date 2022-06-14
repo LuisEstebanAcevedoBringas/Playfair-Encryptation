@@ -5,7 +5,7 @@ def GenerarMatriz(palabra):
     palabra_Clave = str(palabra).upper()
     Palabra = list(palabra_Clave)
 
-    #Eliminar elementos repetidos de la palabra
+    #Remove repeated word elements
     palabra_Procesada = []
     for element in Palabra:
         if element not in palabra_Procesada:
@@ -13,17 +13,17 @@ def GenerarMatriz(palabra):
     len_Palabra = len(palabra_Procesada)
     palabra_Procesada.reverse()
 
-    #Eliminamos las letras de la palabra que esten en la matriz
+    #Eliminate the letters of the word that are in the matrix.
     for i in range (len_Palabra):
         if palabra_Procesada[i] in MatrizFinal:
             MatrizFinal.remove(palabra_Procesada[i])
     
-    #Agregar los elementos de la palabra al alfabeto
+    #Adding word elements to the alphabet
     for j in range (len_Palabra):
         MatrizFinal.insert(0,palabra_Procesada[j])
         j += 1
 
-    #Convertimos la lista un array de numpy y le damos forma de matriz (5x5)
+    #Convert the list to a numpy array and give it the form of a matrix (5x5).
     MatrizFinal = np.array(MatrizFinal)
     MatrizFinal = MatrizFinal.reshape(5,5)
 
