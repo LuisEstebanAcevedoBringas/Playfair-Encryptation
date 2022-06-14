@@ -43,7 +43,7 @@ def ProcesamientoMensaje(mensaje):
         if   q >= longitud: 
             break
     
-    longitud = len(ListaMensaje) #Ppdate the length of the list.
+    longitud = len(ListaMensaje) #Update the length of the list.
 
     if longitud % 2 != 0: #We check if the number of letters in the message is even, if it is not, we add an x at the end.
         ListaMensaje.append("X")
