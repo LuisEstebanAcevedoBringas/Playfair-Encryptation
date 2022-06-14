@@ -19,34 +19,32 @@
             <!-- Caja para el cifrado del mensaje -->
             <form class="Cifrado Flex" action="cifrar" method="post">
                 <h2 class="SubTitle"> Cifrado </h2>
-                <h3>Ingrese el mensaje a cifrar: </h3>
+                <h3>Ingrese el mensaje a cifrar:</h3>
                 <input type="text" name="Mensaje_Cifrar" id="">
                 <h3>Ingrese la palabra clave: </h3>
                 <input type="text" name="Palabra_Cifrar" id="">
                 <button type="submit" class="button" value="Cifrar" id="btn_Cifrar">Cifrar</button>
-                <h3>El mensaje cifrado es: </h3>
+                <h3>El mensaje cifrado es:</h3>
                 {% for message in get_flashed_messages() %}
                     <p>{{ message }}</p>
                 {% endfor %}
                 <label for=""></label>
             </form>
-
             <!-- Caja para el decifrado del mensaje -->
             <form class="Decifrado Flex" action="decifrar" method="post">
                 <h2 class="SubTitle"> Decifrado</h2>
                 <h3>Ingrese el mensaje a decifrar: </h3>
                 <input type="text" name="Mensaje_Decifrar" id="">
-                <h3>Ingrese la palabra clave: </h3>
+                <h3>Ingrese la palabra clave:</h3>
                 <input type="text" name="Palabra_Decifrar" id="">
                 <button class="button">Decifrar</button>
-                <h3>El mensaje decifrado es: </h3>
+                <h3>El mensaje decifrado es:</h3>
                 {% for message in get_flashed_messages() %}
                     <p>{{ message }}</p>
                 {% endfor %}
                 <label for=""></label>
             </form>
         </div>
-
         <!-- Social icons -->
         <div class="social_icons Flex">
             <a href="https://github.com/LuisEstebanAcevedoBringas" target="_blank"><i class="fab fa-brands fa-github"></i></a>
